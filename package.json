@@ -1,0 +1,30 @@
+{
+  "name": "swagger-api-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node --harmony  ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vophihungvn/swagger-multi-docs.git"
+  },
+  "keywords": [
+    "api",
+    "docs",
+    "swagger"
+  ],
+  "author": "Phi-Hung Vo",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/vophihungvn/swagger-multi-docs"
+  },
+  "homepage": "https://github.com/vophihungvn/swagger-multi-docs",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "import-export": "^1.0.1"
+  }
+}

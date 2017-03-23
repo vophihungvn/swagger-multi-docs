@@ -1,0 +1,81 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Test API Document",
+    "description": "Test API Document created by Swagger UI.",
+    "contact": {
+      "name": "Phi-Hung Vo",
+      "email": "vophihungvn@gmail.com"
+    }
+  },
+  "host": "api.vo-phihung.me",
+  "paths": {
+    "/v1/login": {
+      "post": {
+        "description": "User login",
+        "tags": [
+          "Authentication"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Auth"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "required": [
+                "code",
+                "results"
+              ],
+              "properties": {
+                "code": {
+                  "type": "integer",
+                  "example": 200,
+                  "description": "HTTP response status code"
+                },
+                "results": {
+                  "$ref": "#/definitions/AuthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Auth": {
+      "required": [
+        "username",
+        "password"
+      ],
+      "properties": {
+        "username": {
+          "type": "string",
+          "example": "test"
+        },
+        "password": {
+          "type": "string",
+          "example": "test"
+        }
+      }
+    },
+    "AuthResponse": {
+      "required": [
+        "token"
+      ],
+      "properties": {
+        "token": {
+          "type": "string",
+          "example": "63101195904e91fd9aff0347c03d0e5ce39bf6897a0cc08b2bd0550faea1064b"
+        }
+      }
+    }
+  }
+}
