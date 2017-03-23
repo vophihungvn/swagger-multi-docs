@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="x-ua-compatible" content="IE=edge">
-  <title>Swagger multi API Doc</title>
+  <title>Swagger multiple project API Doc</title>
   <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
   <link href='css/typography.css' media='screen' rel='stylesheet' type='text/css'/>
@@ -99,12 +99,14 @@
 <body class="swagger-section">
 <div id='header'>
   <div class="swagger-ui-wrap">
-    <a id="logo" href="/"><span class="logo__title">Test API Docs</span></a>
+    <a id="logo" href="/"><span class="logo__title">API Document</span></a>
     <form id='api_selector'>
       <div class='input'>
         <select id="project_selector" onchange="loadAPI()" class="form-control input">
           <option value="">Select a project</option>
-          <option value="test-api" <%=project=='test-api'?'selected':''%> >Test Api</option>
+          <% projects.forEach(pr => { %>
+            <option  value="<%=pr.file%>" <%=project==pr.file?'selected':''%>><%=pr.name%></option>
+          <%})%>
         </select>
       </div>
     </form>

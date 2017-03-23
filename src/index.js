@@ -1,6 +1,6 @@
-import path         from 'path'
-import express      from 'express'
-import ejs          from 'ejs'
+import path    from 'path'
+import express from 'express'
+import ejs     from 'ejs'
 
 let app = express();
 
@@ -10,7 +10,8 @@ app
 .set('views', path.join(__dirname, 'public'))
 .get('/', (req, res, next) => {
 	res.render(path.join(__dirname, 'public', 'index'),{
-		project: ''
+		project: '',
+		projects: require('./projects.json')
 	})
 })
 .use('/', express.static(path.join(__dirname, 'public')))
@@ -20,7 +21,8 @@ app
 .get('/:project', (req, res, next) => {
 	res.locals.project = req.params.project;
 	res.render(path.join(__dirname, 'public', 'index'),{
-		project: req.params.project
+		project: req.params.project,
+		projects: require('./projects.json')
 	})
 })
 
